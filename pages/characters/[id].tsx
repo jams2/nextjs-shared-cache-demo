@@ -29,7 +29,7 @@ export default function Character({ character, buildInfo }: CharacterProps) {
   return (
     <>
       <Head>
-        <title>{character.name} - Star Wars Character</title>
+        <title>{`${character.name} - Star Wars Character`}</title>
         <meta
           name="description"
           content={`Learn about ${character.name} from the Star Wars universe`}
