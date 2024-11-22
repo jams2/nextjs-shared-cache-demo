@@ -1,5 +1,5 @@
 import type { NextConfig } from 'next'
-import cacheHandler from './next-cache'
+import { cacheHandler } from './next-cache'
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
