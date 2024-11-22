@@ -10,7 +10,8 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "ioredis": "^5.4.1",
+    "@neshca/cache-handler": "^1.8.0",
+    "redis": "^4.6.13",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18"
