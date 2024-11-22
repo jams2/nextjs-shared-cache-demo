@@ -1,6 +1,6 @@
 const nextConfig = {
   reactStrictMode: true,
-  cacheHandler: require.resolve('./next-cache-handler.js'),
+  cacheHandler: require.resolve('./next-cache-handler.mjs'),
   cacheMaxMemorySize: 0,
   logging: {
     fetches: {
