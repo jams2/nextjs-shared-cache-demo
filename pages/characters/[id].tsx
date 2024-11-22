@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetStaticProps, GetStaticPaths } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { getCharacter } from '@/lib/api';
@@ -62,7 +62,16 @@ export default function Character({ character }: CharacterProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+export const getStaticPaths: GetStaticPaths = async () => {
+  const ids = await getAllCharacterIds();
+  
+  return {
+    paths: ids.map(id => ({ params: { id } })),
+    fallback: 'blocking'
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const character = await getCharacter(params?.id as string);
     
@@ -70,6 +79,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
       props: {
         character,
       },
+      revalidate: 3600, // Revalidate every hour
     };
   } catch (error) {
     return {
