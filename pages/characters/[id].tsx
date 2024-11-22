@@ -120,7 +120,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           timestamp: new Date().toISOString(),
         },
       },
-      revalidate: 3600, // Revalidate every hour
+      revalidate: false,
     }
   } catch (error) {
     return {
