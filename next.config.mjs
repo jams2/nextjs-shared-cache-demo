@@ -1,10 +1,9 @@
-import { handler } from './next-cache.js'
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    cacheHandler,
+    // @ts-ignore
+    cacheHandler: (await import('./next-cache-handler.js')).handler,
   },
 }
 
