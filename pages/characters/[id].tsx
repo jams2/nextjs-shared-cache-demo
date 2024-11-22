@@ -22,7 +22,6 @@ interface CharacterProps {
   };
   buildInfo: {
     timestamp: string;
-    type: 'static' | 'revalidated';
   };
 }
 
@@ -63,8 +62,10 @@ export default function Character({ character, buildInfo }: CharacterProps) {
         </div>
 
         <div className={styles.buildInfo}>
-          <p><strong>Page Built:</strong> {buildInfo.timestamp}</p>
-          <p><strong>Build Type:</strong> {buildInfo.type}</p>
+          <p><strong>Page Built:</strong> {new Date(buildInfo.timestamp).toLocaleString('en-GB', {
+            dateStyle: 'full',
+            timeStyle: 'long'
+          })}</p>
         </div>
       </main>
     </>
@@ -88,8 +89,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       props: {
         character,
         buildInfo: {
-          timestamp: new Date().toISOString(),
-          type: 'revalidated'
+          timestamp: new Date().toISOString()
         }
       },
       revalidate: 3600, // Revalidate every hour
