@@ -105,3 +105,23 @@
 .characterInfo em {
   color: #ff6666;
 }
+
+.buildInfo {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-top: 1px solid #FFCC00;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.buildInfo p {
+  margin: 0.25rem 0;
+  color: #666;
+}
+
+.buildInfo strong {
+  color: #999;
+}

@@ -20,9 +20,13 @@ interface CharacterProps {
     vehicles: string[];
     starships: string[];
   };
+  buildInfo: {
+    timestamp: string;
+    type: 'static' | 'revalidated';
+  };
 }
 
-export default function Character({ character }: CharacterProps) {
+export default function Character({ character, buildInfo }: CharacterProps) {
   return (
     <>
       <Head>
@@ -57,6 +61,11 @@ export default function Character({ character }: CharacterProps) {
           )}
           <p><strong>Featured in:</strong> {character.films.length} films</p>
         </div>
+
+        <div className={styles.buildInfo}>
+          <p><strong>Page Built:</strong> {buildInfo.timestamp}</p>
+          <p><strong>Build Type:</strong> {buildInfo.type}</p>
+        </div>
       </main>
     </>
   );
@@ -78,6 +87,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return {
       props: {
         character,
+        buildInfo: {
+          timestamp: new Date().toISOString(),
+          type: 'revalidated'
+        }
       },
       revalidate: 3600, // Revalidate every hour
     };
