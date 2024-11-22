@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: nextjs-app
-          image: star-wars-nextjs:latest    # Changed to match your built image name
-          imagePullPolicy: Never            # Added to use local image
+          image: star-wars-nextjs:latest
+          imagePullPolicy: Never
           ports:
             - containerPort: 3000
           env:

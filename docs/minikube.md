@@ -38,9 +38,9 @@ This guide will help you run the Next.js application with Redis in a local Kuber
 
 Verify Redis is running:
 
-   ```bash
-   kubectl get pods
-   ```
+```bash
+kubectl get pods
+```
 
 2. **Deploy the Next.js application**
 
@@ -50,15 +50,15 @@ Verify Redis is running:
 
 Verify the application pods are running:
 
-   ```bash
-   kubectl get pods
-   ```
+```bash
+kubectl get pods
+```
 
 View the minikube dashboard:
 
-   ```bash
-   minikube dashboard
-   ```
+```bash
+minikube dashboard
+```
 
 ## Accessing the Application
 
@@ -111,6 +111,7 @@ kubectl exec -it <pod-name> -- /bin/sh
 ## Common Issues and Solutions
 
 1. **ErrImagePull or ImagePullBackOff errors**
+
    - Ensure you're connected to Minikube's Docker daemon
    - Verify the image name matches between your build command and deployment.yaml
    - Check that `imagePullPolicy: Never` is set in deployment.yaml
