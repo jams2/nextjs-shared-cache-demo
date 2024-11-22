@@ -2,28 +2,29 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 
-// These would typically come from an API or database
+// Featured Star Wars characters with their IDs from SWAPI
 const featuredCharacters = [
-  { id: "worf", name: "Worf", role: "Chief of Security" },
-  { id: "data", name: "Data", role: "Second Officer" },
+  { id: "1", name: "Luke Skywalker", role: "Jedi Knight" },
+  { id: "4", name: "Darth Vader", role: "Sith Lord" },
+  { id: "3", name: "R2-D2", role: "Astromech Droid" },
 ];
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Star Trek: TNG Character Database</title>
-        <meta name="description" content="Explore characters from Star Trek: The Next Generation" />
+        <title>Star Wars Character Database</title>
+        <meta name="description" content="Explore characters from the Star Wars universe" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Star Trek: The Next Generation
+          Star Wars Universe
         </h1>
         
         <p className={styles.description}>
-          Explore the crew of the USS Enterprise NCC-1701-D
+          Explore the legendary characters of a galaxy far, far away...
         </p>
 
         <div className={styles.grid}>

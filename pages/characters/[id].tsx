@@ -7,13 +7,18 @@ import styles from '@/styles/Home.module.css';
 interface CharacterProps {
   character: {
     name: string;
+    height: string;
+    mass: string;
+    hair_color: string;
+    skin_color: string;
+    eye_color: string;
+    birth_year: string;
     gender: string;
-    yearOfBirth?: number;
-    deceased?: boolean;
-    hologram?: boolean;
-    serialNumber?: string;
-    rank?: string;
-    species?: string[];
+    homeworld: string;
+    films: string[];
+    species: string[];
+    vehicles: string[];
+    starships: string[];
   };
 }
 
@@ -21,8 +26,8 @@ export default function Character({ character }: CharacterProps) {
   return (
     <>
       <Head>
-        <title>{character.name} - Star Trek: TNG Character</title>
-        <meta name="description" content={`Learn about ${character.name} from Star Trek: The Next Generation`} />
+        <title>{character.name} - Star Wars Character</title>
+        <meta name="description" content={`Learn about ${character.name} from the Star Wars universe`} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -34,13 +39,23 @@ export default function Character({ character }: CharacterProps) {
         <h1 className={styles.title}>{character.name}</h1>
         
         <div className={styles.characterInfo}>
+          <p><strong>Height:</strong> {character.height}cm</p>
+          <p><strong>Mass:</strong> {character.mass}kg</p>
+          <p><strong>Hair Color:</strong> {character.hair_color}</p>
+          <p><strong>Skin Color:</strong> {character.skin_color}</p>
+          <p><strong>Eye Color:</strong> {character.eye_color}</p>
+          <p><strong>Birth Year:</strong> {character.birth_year}</p>
           <p><strong>Gender:</strong> {character.gender}</p>
-          {character.rank && <p><strong>Rank:</strong> {character.rank}</p>}
-          {character.serialNumber && <p><strong>Serial Number:</strong> {character.serialNumber}</p>}
-          {character.yearOfBirth && <p><strong>Year of Birth:</strong> {character.yearOfBirth}</p>}
-          {character.species && <p><strong>Species:</strong> {character.species.join(', ')}</p>}
-          {character.hologram && <p><em>Holographic Character</em></p>}
-          {character.deceased && <p><em>Deceased</em></p>}
+          {character.species.length > 0 && (
+            <p><strong>Species:</strong> {character.species.length}</p>
+          )}
+          {character.vehicles.length > 0 && (
+            <p><strong>Vehicles:</strong> {character.vehicles.length}</p>
+          )}
+          {character.starships.length > 0 && (
+            <p><strong>Starships:</strong> {character.starships.length}</p>
+          )}
+          <p><strong>Featured in:</strong> {character.films.length} films</p>
         </div>
       </main>
     </>

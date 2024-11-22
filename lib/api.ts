@@ -1,21 +1,26 @@
 interface Character {
   name: string;
+  height: string;
+  mass: string;
+  hair_color: string;
+  skin_color: string;
+  eye_color: string;
+  birth_year: string;
   gender: string;
-  yearOfBirth?: number;
-  deceased?: boolean;
-  hologram?: boolean;
-  serialNumber?: string;
-  rank?: string;
-  species?: string[];
+  homeworld: string;
+  films: string[];
+  species: string[];
+  vehicles: string[];
+  starships: string[];
 }
 
-export async function getCharacter(uid: string): Promise<Character> {
-  const response = await fetch(`https://stapi.co/api/v1/rest/character?uid=${uid}`);
+export async function getCharacter(id: string): Promise<Character> {
+  const response = await fetch(`https://swapi.dev/api/people/${id}/`);
   
   if (!response.ok) {
     throw new Error('Failed to fetch character data');
   }
 
   const data = await response.json();
-  return data.character;
+  return data;
 }

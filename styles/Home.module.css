@@ -6,7 +6,7 @@
   padding: 4rem;
   min-height: 100vh;
   background-color: #000;
-  color: #FFCC00;
+  color: #FFE81F;
 }
 
 .title {
@@ -35,17 +35,17 @@
 
 .card {
   padding: 1.5rem;
-  border: 2px solid #FFCC00;
+  border: 2px solid #FFE81F;
   border-radius: 8px;
   background: rgba(0, 25, 50, 0.7);
   transition: all 0.3s ease;
   text-decoration: none;
-  color: #FFCC00;
+  color: #FFE81F;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 15px #FFCC00;
+  box-shadow: 0 0 15px #FFE81F;
   background: rgba(0, 35, 70, 0.8);
 }
 
