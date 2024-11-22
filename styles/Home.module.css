@@ -3,10 +3,26 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 4rem;
+  padding: 2rem;
   min-height: 100vh;
-  background-color: #000;
-  color: #ffe81f;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+}
+
+.main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    transparent,
+    var(--sw-yellow),
+    transparent);
+  opacity: 0.3;
 }
 
 .title {
@@ -34,19 +50,41 @@
 }
 
 .card {
-  padding: 1.5rem;
-  border: 2px solid #ffe81f;
-  border-radius: 8px;
+  padding: 2rem;
+  border: 1px solid var(--sw-yellow);
+  border-radius: var(--border-radius);
   background: rgba(0, 25, 50, 0.7);
   transition: all 0.3s ease;
   text-decoration: none;
-  color: #ffe81f;
+  color: var(--sw-yellow);
+  backdrop-filter: blur(5px);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent,
+    var(--sw-yellow),
+    transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 15px #ffe81f;
-  background: rgba(0, 35, 70, 0.8);
+  box-shadow: 0 0 20px rgba(255, 232, 31, 0.3);
+  background: rgba(0, 35, 70, 0.9);
+}
+
+.card:hover::before {
+  transform: translateX(100%);
 }
 
 .card h2 {
@@ -83,13 +121,31 @@
 }
 
 .characterInfo {
-  background: rgba(0, 25, 50, 0.7);
-  border: 2px solid #ffcc00;
-  border-radius: 8px;
-  padding: 2rem;
+  background: rgba(0, 25, 50, 0.85);
+  border: 1px solid var(--sw-yellow);
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
   width: 100%;
   max-width: 800px;
   margin-top: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.characterInfo::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, 
+    transparent 0%,
+    rgba(255, 232, 31, 0.1) 50%,
+    transparent 100%);
+  pointer-events: none;
 }
 
 .characterInfo p {
