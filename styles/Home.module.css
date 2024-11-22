@@ -69,3 +69,39 @@
     font-size: 2rem;
   }
 }
+
+.backLink {
+  align-self: flex-start;
+  color: #99ccff;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+}
+
+.backLink:hover {
+  color: #FFCC00;
+}
+
+.characterInfo {
+  background: rgba(0, 25, 50, 0.7);
+  border: 2px solid #FFCC00;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 2rem;
+}
+
+.characterInfo p {
+  color: #99ccff;
+  margin: 0.5rem 0;
+}
+
+.characterInfo strong {
+  color: #FFCC00;
+  margin-right: 0.5rem;
+}
+
+.characterInfo em {
+  color: #ff6666;
+}
