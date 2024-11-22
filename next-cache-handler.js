@@ -1,5 +1,5 @@
 const { createClient } = require('redis')
-const createRedisHandler = require('@neshca/cache-handler/redis-strings')
+const createHandler = require('@neshca/cache-handler/redis-strings')
 
 const client = createClient({
   url: process.env.REDIS_URL || 'redis://localhost:6379'
@@ -7,7 +7,7 @@ const client = createClient({
 
 client.connect()
 
-const handler = createRedisHandler({
+const handler = createHandler({
   client,
   keyPrefix: 'cache:',
   timeoutMs: 5000,
