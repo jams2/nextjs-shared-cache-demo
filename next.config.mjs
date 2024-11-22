@@ -1,4 +1,4 @@
-import { cacheHandler } from './next-cache'
+import { cacheHandler } from './next-cache.js'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
