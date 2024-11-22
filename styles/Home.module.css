@@ -6,7 +6,7 @@
   padding: 4rem;
   min-height: 100vh;
   background-color: #000;
-  color: #FFE81F;
+  color: #ffe81f;
 }
 
 .title {
@@ -35,17 +35,17 @@
 
 .card {
   padding: 1.5rem;
-  border: 2px solid #FFE81F;
+  border: 2px solid #ffe81f;
   border-radius: 8px;
   background: rgba(0, 25, 50, 0.7);
   transition: all 0.3s ease;
   text-decoration: none;
-  color: #FFE81F;
+  color: #ffe81f;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 15px #FFE81F;
+  box-shadow: 0 0 15px #ffe81f;
   background: rgba(0, 35, 70, 0.8);
 }
 
@@ -79,12 +79,12 @@
 }
 
 .backLink:hover {
-  color: #FFCC00;
+  color: #ffcc00;
 }
 
 .characterInfo {
   background: rgba(0, 25, 50, 0.7);
-  border: 2px solid #FFCC00;
+  border: 2px solid #ffcc00;
   border-radius: 8px;
   padding: 2rem;
   width: 100%;
@@ -98,7 +98,7 @@
 }
 
 .characterInfo strong {
-  color: #FFCC00;
+  color: #ffcc00;
   margin-right: 0.5rem;
 }
 
@@ -109,7 +109,7 @@
 .buildInfo {
   margin-top: 2rem;
   padding: 1rem;
-  border-top: 1px solid #FFCC00;
+  border-top: 1px solid #ffcc00;
   font-size: 0.9rem;
   color: #666;
   text-align: center;

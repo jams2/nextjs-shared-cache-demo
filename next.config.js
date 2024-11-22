@@ -1,10 +1,6 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
-    // @ts-ignore
-    cacheHandler: require('./next-cache-handler.js').handler,
-  },
+  cacheHandler: require.resolve('./next-cache-handler.js'),
 }
 
 module.exports = nextConfig
