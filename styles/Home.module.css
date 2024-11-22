@@ -153,6 +153,24 @@
   margin: 0.5rem 0;
 }
 
+.characterInfo ul {
+  list-style-type: none;
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.characterInfo li {
+  margin: 0.25rem 0;
+  position: relative;
+}
+
+.characterInfo li::before {
+  content: '•';
+  color: var(--sw-yellow);
+  position: absolute;
+  left: -1.2rem;
+}
+
 .characterInfo strong {
   color: #ffcc00;
   margin-right: 0.5rem;
