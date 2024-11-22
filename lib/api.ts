@@ -25,9 +25,10 @@ export async function getCharacter(id: string): Promise<Character> {
   return data;
 }
 
+import { featuredCharacters } from '@/pages/index';
+
 export async function getAllCharacterIds(): Promise<string[]> {
-  // For demo purposes, we'll return just the first 10 character IDs
-  return Array.from({ length: 10 }, (_, i) => (i + 1).toString());
+  return featuredCharacters.map(character => character.id);
 }
 
 export async function revalidateCharacter(id: string) {

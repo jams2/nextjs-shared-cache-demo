@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 
 // Featured Star Wars characters with their IDs from SWAPI
-const featuredCharacters = [
+export const featuredCharacters = [
   { id: "1", name: "Luke Skywalker", role: "Jedi Knight" },
   { id: "4", name: "Darth Vader", role: "Sith Lord" },
   { id: "3", name: "R2-D2", role: "Astromech Droid" },
