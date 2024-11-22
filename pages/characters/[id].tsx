@@ -68,22 +68,38 @@ export default function Character({ character, buildInfo }: CharacterProps) {
           </p>
           {character.species.length > 0 && (
             <p>
-              <strong>Species:</strong> {character.species.length}
+              <strong>Species:</strong>{' '}
+              {Array.isArray(character.species) ? character.species.join(', ') : 'Unknown'}
             </p>
           )}
           {character.vehicles.length > 0 && (
-            <p>
-              <strong>Vehicles:</strong> {character.vehicles.length}
-            </p>
+            <div>
+              <strong>Vehicles:</strong>
+              <ul className={styles.list}>
+                {character.vehicles.map((vehicle, index) => (
+                  <li key={index}>{vehicle}</li>
+                ))}
+              </ul>
+            </div>
           )}
           {character.starships.length > 0 && (
-            <p>
-              <strong>Starships:</strong> {character.starships.length}
-            </p>
+            <div>
+              <strong>Starships:</strong>
+              <ul className={styles.list}>
+                {character.starships.map((starship, index) => (
+                  <li key={index}>{starship}</li>
+                ))}
+              </ul>
+            </div>
           )}
-          <p>
-            <strong>Featured in:</strong> {character.films.length} films
-          </p>
+          <div>
+            <strong>Featured in:</strong>
+            <ul className={styles.list}>
+              {character.films.map((film, index) => (
+                <li key={index}>{film}</li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className={styles.buildInfo}>

@@ -22,7 +22,43 @@ export async function getCharacter(id: string): Promise<Character> {
   }
 
   const data = await response.json()
-  return data
+  
+  // Fetch starship names
+  const starshipPromises = data.starships.map(async (url: string) => {
+    const response = await fetch(url)
+    if (!response.ok) return 'Unknown Starship'
+    const shipData = await response.json()
+    return shipData.name
+  })
+
+  // Fetch vehicle names
+  const vehiclePromises = data.vehicles.map(async (url: string) => {
+    const response = await fetch(url)
+    if (!response.ok) return 'Unknown Vehicle'
+    const vehicleData = await response.json()
+    return vehicleData.name
+  })
+
+  // Fetch film titles
+  const filmPromises = data.films.map(async (url: string) => {
+    const response = await fetch(url)
+    if (!response.ok) return 'Unknown Film'
+    const filmData = await response.json()
+    return filmData.title
+  })
+
+  const [starships, vehicles, films] = await Promise.all([
+    Promise.all(starshipPromises),
+    Promise.all(vehiclePromises),
+    Promise.all(filmPromises)
+  ])
+
+  return {
+    ...data,
+    starships,
+    vehicles,
+    films
+  }
 }
 
 import { featuredCharacters } from '@/pages/index'

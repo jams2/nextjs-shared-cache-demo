@@ -7,6 +7,10 @@ export const featuredCharacters = [
   { id: '1', name: 'Luke Skywalker', role: 'Jedi Knight' },
   { id: '4', name: 'Darth Vader', role: 'Sith Lord' },
   { id: '3', name: 'R2-D2', role: 'Astromech Droid' },
+  { id: '10', name: 'Obi-Wan Kenobi', role: 'Jedi Master' },
+  { id: '13', name: 'Chewbacca', role: 'Wookiee Warrior' },
+  { id: '14', name: 'Han Solo', role: 'Smuggler' },
+  { id: '5', name: 'Leia Organa', role: 'Princess & Rebel Leader' }
 ]
 
 export default function Home() {
