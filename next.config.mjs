@@ -1,7 +1,7 @@
-import type { NextConfig } from 'next'
 import { cacheHandler } from './next-cache'
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
   experimental: {
     cacheHandler,
